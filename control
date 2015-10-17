@@ -1,0 +1,9 @@
+Package: com.rafaelcosta.jb.mapsallcountries
+Name: MapsAllCountries
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Rafael Costa
+Author: Rafael Costa
+Section: Tweaks
