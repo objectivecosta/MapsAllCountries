@@ -34,7 +34,7 @@ the generation of a class list and an automatic constructor.
 */
 
 
-%hook MNRouteSet
+%hook GEORouteSetPage
 
 - (BOOL)isNavigable {
 	return YES;
