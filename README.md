@@ -3,5 +3,4 @@ Repository with the source code of the (now ancient, but still working) MapsAllC
 
 ## Update 2016:
 
-The amazing [Luis Lins](https://twitter.com/blackforstripes) updated this Tweak for iOS 9.
-The latest commit to Tweak.xm shows the change.
+Thanks to [Luis Lins](https://github.com/luis-f-lins) who updated this Tweak for iOS 9 and [Bruno Andrade](https://github.com/BrunoNFL) who made Luis' update backwards compatible
