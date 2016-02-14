@@ -34,10 +34,33 @@ the generation of a class list and an automatic constructor.
 */
 
 
-%hook GEORouteSetPage
+#define IS_IOS_OR_NEWER(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+%group iOS_6
+%hook MNRouteSet
 
-- (BOOL)isNavigable {
-	return YES;
-}
+    - (BOOL)isNavigable {
+        return YES;
+    }
 
 %end
+%end
+
+%group iOS_9
+%hook GEORouteSetPage
+
+    - (BOOL)isNavigable {
+        return YES;
+    }
+
+%end
+%end
+
+%ctor{
+
+    if(IS_IOS_OR_NEWER(@"9.0")){
+        %init(iOS_9);
+    }
+    else{
+        %init(iOS_6)
+    }
+}
