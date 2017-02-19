@@ -55,12 +55,27 @@ the generation of a class list and an automatic constructor.
 %end
 %end
 
-%ctor{
+%group iOS_10
+%hook DirectionsManager
+    - (BOOL)canRunNavigationForSelectedRoute {
+        return YES;
+    }
+    - (BOOL)canRunNavigationForRoute: (id)route {
+        return YES;
+    }
+%end
+%end
 
-    if(IS_IOS_OR_NEWER(@"9.0")){
-        %init(iOS_9);
+%ctor{
+    if(IS_IOS_OR_NEWER(@"10.0")){
+        %init(iOS_10);
     }
     else{
-        %init(iOS_6)
+        if(IS_IOS_OR_NEWER(@"9.0")){
+            %init(iOS_9);
+        }
+        else{
+            %init(iOS_6)
+        }
     }
 }
